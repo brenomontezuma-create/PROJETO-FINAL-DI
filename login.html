@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login | Portfólio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a class="logo" href="index.html">← Voltar ao portfólio</a>
+      <div class="acess" role="group" aria-label="Acessibilidade">
+        <button id="menor" aria-label="Diminuir fonte">A-</button>
+        <button id="maior" aria-label="Aumentar fonte">A+</button>
+        <button id="tema" aria-label="Alternar modo claro e escuro" aria-pressed="false">🌙 Escuro</button>
+        <button id="contraste" aria-pressed="false">Alto contraste</button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="login-box">
+      <h1>Entrar</h1>
+      <form id="login" novalidate>
+        <label for="usuario">Usuário</label>
+        <input id="usuario" type="text" autocomplete="username" required>
+        <label for="senha">Senha</label>
+        <input id="senha" type="password" autocomplete="current-password" required>
+        <p id="msg-login" role="status"></p>
+        <button class="btn" type="submit">Entrar</button>
+      </form>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

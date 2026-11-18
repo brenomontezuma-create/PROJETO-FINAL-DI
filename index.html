@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfólio | Seu Nome</title>
+  <meta name="description" content="Portfólio pessoal com projetos, habilidades e contato.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="header">
+    <div class="container nav">
+      <a class="logo" href="#inicio">Seu Nome</a>
+      <nav aria-label="Menu principal">
+        <ul>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#habilidades">Habilidades</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
+      <!-- Aba de acessibilidade -->
+      <div class="acess" role="group" aria-label="Acessibilidade">
+        <button id="menor" aria-label="Diminuir fonte">A-</button>
+        <button id="maior" aria-label="Aumentar fonte">A+</button>
+        <button id="tema" aria-label="Alternar modo claro e escuro" aria-pressed="false">🌙 Escuro</button>
+        <button id="contraste" aria-pressed="false">Alto contraste</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <!-- Início + carrossel -->
+    <section id="inicio" class="container hero">
+      <h1>Olá, eu sou Seu Nome</h1>
+      <p>Estudante de desenvolvimento, apaixonado por criar interfaces acessíveis e fáceis de usar.</p>
+      <a class="btn destaque" href="#projetos">Ver projetos</a>
+
+      <div class="carrossel" aria-roledescription="carrossel" aria-label="Destaques">
+        <div class="slides">
+          <figure class="slide ativo"><img src="images/slide1.svg" alt="Ilustração de telas de projetos"><figcaption>Meus projetos</figcaption></figure>
+          <figure class="slide"><img src="images/slide2.svg" alt="Ilustração sobre design e acessibilidade"><figcaption>Design e acessibilidade</figcaption></figure>
+          <figure class="slide"><img src="images/slide3.svg" alt="Ilustração sobre código limpo"><figcaption>Código limpo</figcaption></figure>
+        </div>
+        <button class="seta esq" id="ant" aria-label="Slide anterior">‹</button>
+        <button class="seta dir" id="prox" aria-label="Próximo slide">›</button>
+        <div class="pontos" id="pontos"></div>
+      </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre" class="container">
+      <h2>Sobre mim</h2>
+      <div class="sobre">
+        <img src="images/perfil.svg" alt="Foto de perfil (avatar)" width="160" height="160">
+        <p>Sou estudante e estou construindo meu caminho na área de tecnologia. Gosto de unir design e código para criar páginas bonitas, rápidas e acessíveis para todas as pessoas. Este portfólio reúne meus trabalhos e minhas principais habilidades.</p>
+      </div>
+    </section>
+
+    <!-- Projetos com busca e abas -->
+    <section id="projetos" class="container">
+      <h2>Projetos</h2>
+      <label for="busca" class="vh">Pesquisar projetos</label>
+      <input type="search" id="busca" placeholder="Pesquisar projeto...">
+      <div class="abas" role="group" aria-label="Filtrar por categoria">
+        <button class="aba ativa" data-cat="todos">Todos</button>
+        <button class="aba" data-cat="web">Web</button>
+        <button class="aba" data-cat="design">Design</button>
+        <button class="aba" data-cat="academico">Acadêmico</button>
+      </div>
+      <div class="grade" id="lista">
+        <article class="cartao" data-cat="web">
+          <img src="images/projeto1.svg" alt="Capa do projeto Portfólio">
+          <div class="corpo"><h3>Portfólio pessoal</h3><p>Site com HTML, CSS e JavaScript, com modo escuro e foco em acessibilidade.</p><a class="btn" href="#">Ver projeto</a></div>
+        </article>
+        <article class="cartao" data-cat="design">
+          <img src="images/projeto2.svg" alt="Capa do projeto Protótipo">
+          <div class="corpo"><h3>Protótipo de app</h3><p>Telas de um aplicativo criadas com foco em usabilidade e paleta de cores.</p><a class="btn" href="#">Ver projeto</a></div>
+        </article>
+        <article class="cartao" data-cat="academico">
+          <img src="images/projeto3.svg" alt="Capa do projeto Atividade CSS">
+          <div class="corpo"><h3>Atividade de CSS</h3><p>Páginas feitas com CSS puro, Tailwind e Bootstrap para comparar abordagens.</p><a class="btn" href="#">Ver projeto</a></div>
+        </article>
+      </div>
+      <p id="vazio" class="vazio" hidden>Nenhum projeto encontrado.</p>
+    </section>
+
+    <!-- Cartões explicativos -->
+    <section id="habilidades" class="container">
+      <h2>Habilidades</h2>
+      <div class="grade">
+        <article class="cartao simples"><h3>HTML</h3><p>Estruturo páginas com tags semânticas, o que ajuda leitores de tela e o SEO.</p></article>
+        <article class="cartao simples"><h3>CSS</h3><p>Crio layouts responsivos com Flexbox e Grid, além de temas claro e escuro.</p></article>
+        <article class="cartao simples"><h3>JavaScript</h3><p>Adiciono interação: carrossel, filtros, validação de formulário e acessibilidade.</p></article>
+        <article class="cartao simples"><h3>Acessibilidade</h3><p>Aplico as diretrizes WCAG: contraste, foco visível e textos alternativos.</p></article>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="container">
+      <h2>Contato</h2>
+      <form id="form" novalidate>
+        <label for="nome">Nome</label>
+        <input id="nome" type="text" required autocomplete="name">
+        <label for="email">E-mail</label>
+        <input id="email" type="email" required autocomplete="email">
+        <label for="msg">Mensagem</label>
+        <textarea id="msg" rows="4" required></textarea>
+        <p id="status" role="status"></p>
+        <button class="btn destaque" type="submit">Enviar mensagem</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Seu Nome. Todos os direitos reservados.</p>
+      <p><a href="mailto:seuemail@exemplo.com">E-mail</a> · <a href="https://github.com/">GitHub</a> · <a href="https://linkedin.com/">LinkedIn</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
